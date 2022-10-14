@@ -1,0 +1,21 @@
+name: Build .NET
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # uses example: 'actions' = user (github) '/' 'checkout' = repository name '@' 'v2' = branch name 
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3.0.2
+        with:
+          dotnet-version: 6.0.x
+      - name: restore dependencies
+        run: dotnet restore ScriptTest/ScriptTest.csproj
+      - name: Publish 
+        run: dotnet publish -c release ScriptTest/ScriptTest.csproj
+      
