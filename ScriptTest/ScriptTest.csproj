@@ -2,16 +2,35 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;S2479</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;S2479</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\Script1.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Script1.js" />
+    <EmbeddedResource Include="Scripts\Script1.vbs" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="FastColoredTextBox.Net5" Version="2.16.26" />
-    <PackageReference Include="Microsoft.ClearScript.Core" Version="7.3.4" />
-    <PackageReference Include="Microsoft.ClearScript.Windows" Version="7.3.4" />
+    <PackageReference Include="Microsoft.ClearScript" Version="7.3.5" />
+    <PackageReference Include="Microsoft.ClearScript.Core" Version="7.3.5" />
+    <PackageReference Include="Microsoft.ClearScript.V8" Version="7.3.5" />
+    <PackageReference Include="Microsoft.ClearScript.Windows" Version="7.3.5" />
   </ItemGroup>
 
   <ItemGroup>
