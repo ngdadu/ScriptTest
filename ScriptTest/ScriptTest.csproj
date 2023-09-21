@@ -6,6 +6,9 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,10 +30,10 @@
 
   <ItemGroup>
     <PackageReference Include="FastColoredTextBox.Net5" Version="2.16.26" />
-    <PackageReference Include="Microsoft.ClearScript" Version="7.3.5" />
-    <PackageReference Include="Microsoft.ClearScript.Core" Version="7.3.5" />
-    <PackageReference Include="Microsoft.ClearScript.V8" Version="7.3.5" />
-    <PackageReference Include="Microsoft.ClearScript.Windows" Version="7.3.5" />
+    <PackageReference Include="Microsoft.ClearScript" Version="7.4.3" />
+    <PackageReference Include="Microsoft.ClearScript.Core" Version="7.4.3" />
+    <PackageReference Include="Microsoft.ClearScript.V8" Version="7.4.3" />
+    <PackageReference Include="Microsoft.ClearScript.Windows" Version="7.4.3" />
   </ItemGroup>
 
   <ItemGroup>
